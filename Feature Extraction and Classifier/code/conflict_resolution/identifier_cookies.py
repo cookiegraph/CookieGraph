@@ -199,9 +199,9 @@ if __name__ == "__main__":
 	df_allmulti = pd.DataFrame()
 
 	#Folder of graph files
-	graph_folder = "/home/siby/webgraph_optimized/run9_data/graph_data"
+	graph_folder = "../dataset/graph
 	#Processed label data
-	labelled_file = "/home/siby/webgraph_optimized/newlabels_processed.pkl"
+	labelled_file = "newlabels_processed.pkl"
 	df_labelled = pd.read_pickle(labelled_file)
 
 	for i in range(1, 11):

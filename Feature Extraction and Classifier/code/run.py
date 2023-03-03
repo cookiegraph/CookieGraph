@@ -336,7 +336,9 @@ def pipeline(db_file, features_file, ldb_file, first, tag):
 if __name__ == "__main__":
 
     FEATURES_FILE = "features_new.yaml"
-    FOLDER = "/home/siby/dataset4/"
+    # This path needs to be changed to the path where the crawl data is stored
+    # Currently, it expects the crawl data to be in a subfolder where each subfolder contains a crawl-data.sqlite file
+    FOLDER = "../OpenWPM/datadir"
     folders = os.listdir(FOLDER)
     print(folders)
     first=True
