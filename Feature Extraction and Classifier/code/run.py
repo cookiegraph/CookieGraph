@@ -230,6 +230,13 @@ def apply_tasks(df, visit_id, features_file, ldb_file, graph_columns, feature_co
             df_features.reindex(columns=feature_columns).to_csv("features_" + str(tag) + ".csv", mode='a', header=False)
         end = time.time()
         print("Extracted features:", end-start)
+        df_labelled = label_data(df, filterlists, filterlist_rules, df_declared_labels)
+        if not os.path.exists("labels_" + str(tag) + ".csv"):
+            df_labelled.to_csv("labels_" + str(tag) + ".csv")
+        else:
+            df_labelled.to_csv("labels_" + str(tag) + ".csv", mode='a', header=False)
+        end = time.time()
+        print("Labelled graph:", end-start)
     except Exception as e:
         print("Errored in pipeline:", e)
         traceback.print_exc()
